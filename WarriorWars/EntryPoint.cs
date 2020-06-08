@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Threading;
 using WarriorWars.Enum;
 
 namespace WarriorWars
@@ -23,6 +24,7 @@ namespace WarriorWars
                 {
                     badGuy.Attack(goodGuy);
                 }
+                Thread.Sleep(250);
             }
         }
     }

@@ -7,12 +7,12 @@ namespace WarriorWars.Equipment
 {
     class Weapon
     {
-        private const int GOOD_GUY_DAMAGE = 5;
-        private const int BAD_GUY_DAMAGE = 5;
+        private const int GOOD_GUY_DAMAGE = 10;
+        private const int BAD_GUY_DAMAGE = 10;
 
         private int damage;
 
-        public int Demage
+        public int Damage
         {
             get
             {

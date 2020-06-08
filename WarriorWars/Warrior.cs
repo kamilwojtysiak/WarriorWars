@@ -21,7 +21,7 @@ namespace WarriorWars
         {
             get
             {
-                return IsAlive;
+                return _isAlive;
             }
         }
 
@@ -51,11 +51,31 @@ namespace WarriorWars
             }
         }
 
-        public void Attack(Warrior enemy)
+        public void Attack(Warrior enemyWarrior)
         {
-            int damage = weapon.Demage / enemy.armor.ArmourPoints;
+            int damage = weapon.Damage / enemyWarrior.armor.ArmourPoints;
 
-            enemy._health -= damage;
+            enemyWarrior._health -= damage;
+
+            AttackResult(enemyWarrior, damage);
+        }
+
+        private void AttackResult(Warrior enemyWarrior, int damage)
+        {
+            if (enemyWarrior._health <= 0)
+            {
+                enemyWarrior._isAlive = false;
+
+                Tools.ColorWriteLine($"{enemyWarrior._name} is dead!", ConsoleColor.Red);
+                Tools.ColorWriteLine($"{_name} is victorious!", ConsoleColor.Green);
+            }
+            else
+            {
+                Console.WriteLine($"{_name} attacked {enemyWarrior._name} for {damage}.\n" +
+                    $"{_name} current health: {_health}\n" +
+                    $"{ enemyWarrior._name} current health: { enemyWarrior._health}\n" +
+                    new string('-', 40) + "\n");
+            }
         }
     }
 }
