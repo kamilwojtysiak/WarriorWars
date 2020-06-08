@@ -8,8 +8,8 @@ namespace WarriorWars
 {
     class Warrior
     {
-        private int goodGuyStartingHealth;
-        private int badGuyStartingHealth;
+        private const int GOOD_GUY_STARTING_HEALTH = 100;
+        private const int BAD_GUY_STARTING_HEALTH = 100;
 
         private Faction faction;
 
@@ -39,12 +39,12 @@ namespace WarriorWars
                 case Faction.GoodGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = goodGuyStartingHealth;
+                    health = GOOD_GUY_STARTING_HEALTH;
                     break;
                 case Faction.BadGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = badGuyStartingHealth;
+                    health = BAD_GUY_STARTING_HEALTH;
                     break;
                 default:
                     break;
