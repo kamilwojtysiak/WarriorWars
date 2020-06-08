@@ -7,13 +7,13 @@ namespace WarriorWars.Equipment
         private const int GOOD_GUY_ARMOUR = 5;
         private const int BAD_GUY_ARMOR = 5;
 
-        private int armourPoints;
+        private int _armourPoints;
 
         public int ArmourPoints
         {
             get
             {
-                return armourPoints;
+                return _armourPoints;
             }
         }
 
@@ -22,10 +22,10 @@ namespace WarriorWars.Equipment
             switch (faction)
             {
                 case Faction.GoodGuy:
-                    armourPoints = GOOD_GUY_ARMOUR;
+                    _armourPoints = GOOD_GUY_ARMOUR;
                     break;
                 case Faction.BadGuy:
-                    armourPoints = BAD_GUY_ARMOR;
+                    _armourPoints = BAD_GUY_ARMOR;
                     break;
                 default:
                     break;
