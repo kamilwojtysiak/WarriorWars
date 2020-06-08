@@ -1,4 +1,4 @@
-﻿using WarriorWars.Enu;
+﻿using WarriorWars.Enum;
 using WarriorWars.Equipment;
 using System;
 using System.Collections.Generic;
@@ -11,11 +11,11 @@ namespace WarriorWars
         private const int GOOD_GUY_STARTING_HEALTH = 100;
         private const int BAD_GUY_STARTING_HEALTH = 100;
 
-        private Faction faction;
+        private readonly Faction FACTION;
 
-        private int health;
-        private string name;
-        private bool isAlive;
+        private int _health;
+        private string _name;
+        private bool _isAlive;
 
         public bool IsAlive
         {
@@ -30,25 +30,32 @@ namespace WarriorWars
 
         public Warrior(string name, Faction faction)
         {
-            this.name = name;
-            this.faction = faction;
-            isAlive = true;
+            this._name = name;
+            FACTION = faction;
+            _isAlive = true;
 
             switch (faction)
             {
                 case Faction.GoodGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = GOOD_GUY_STARTING_HEALTH;
+                    _health = GOOD_GUY_STARTING_HEALTH;
                     break;
                 case Faction.BadGuy:
                     weapon = new Weapon(faction);
                     armor = new Armor(faction);
-                    health = BAD_GUY_STARTING_HEALTH;
+                    _health = BAD_GUY_STARTING_HEALTH;
                     break;
                 default:
                     break;
             }
+        }
+
+        public void Attack(Warrior enemy)
+        {
+            int damage = weapon.Demage / enemy.armor.ArmourPoints;
+
+            enemy._health -= damage;
         }
     }
 }

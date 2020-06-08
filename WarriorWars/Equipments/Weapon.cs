@@ -1,5 +1,5 @@
 ﻿using System;
-using WarriorWars.Enu;
+using WarriorWars.Enum;
 using System.Collections.Generic;
 using System.Text;
 

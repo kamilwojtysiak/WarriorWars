@@ -1,4 +1,4 @@
-﻿using WarriorWars.Enu;
+﻿using WarriorWars.Enum;
 
 namespace WarriorWars.Equipment
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WarriorWars.Enu
+namespace WarriorWars.Enum
 {
     enum Faction
     {
